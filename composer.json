@@ -1,0 +1,10 @@
+{
+  "name": "shopware/plugin-dev-tools",
+  "description": "Tools for plugin development.",
+  "type": "application",
+  "authors": [
+    { "name": "Simon Bäumer", "email": "s.baeumer@shopware.com" }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

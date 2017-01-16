@@ -1,0 +1,12 @@
+templates:
+    - source: tool-installation/templates/.psh.yml.dist.tpl
+      destination: ../../../.psh.yml.dist
+
+paths:
+    - tool-installation
+
+const:
+    PLUGIN_ROOT: ../../../
+
+dynamic:
+    PWD: pwd
