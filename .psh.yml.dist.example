@@ -1,11 +1,12 @@
 const:
-    PLUGIN:
+    PLUGIN: SwagExample
+    SHOPWARE_ROOT: ../../../
 
 environments:
     test:
         templates:
-            - source: vendor/shopware/plugin-dev-tools/config_testing.php.tpl
-              destination: path/to/shopware_root/config_testing.php
+            - source: vendor/shopware/plugin-dev-tools/testing/templates/config_testing.php.tpl
+              destination: ../../../config_testing.php
         paths:
             - vendor/shopware/plugin-dev-tools
         const:
