@@ -8,7 +8,7 @@ This tools provide fast ways to solve common plugin development issues.
 
 1. Add this repository to your composer file and run `composer install`
 2. Create a symlink `ln -s vendor/shopware/plugin-dev-tools/psh.phar psh`
-3. Configure your `.psh.yml.dist.example` and rename it to `.psh.yml.dist`
+3. Create a `.psh.yml.dist` file and configure it
 4. Run `./psh`
 
 ## .psh.yml configuration tips

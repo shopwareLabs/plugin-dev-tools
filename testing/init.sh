@@ -12,4 +12,4 @@ php __SHOPWARE_ROOT__bin/console sw:plugin:install --activate "__PLUGIN__" --env
 
 php __SHOPWARE_ROOT__bin/console sw:cache:clear --env="__ENV__"
 
-INCLUDE: plugin-dev-tools/testing/disable-search-index-regeneration.sh
+INCLUDE: vendor/shopware/plugin-dev-tools/testing/disable-search-index-regeneration.sh
