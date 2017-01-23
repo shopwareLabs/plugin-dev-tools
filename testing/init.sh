@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Setup testing environment
 # Create database
 echo "create database __DB_DATABASE__" | mysql -u __DB_USER__ -p__DB_PASSWORD__
 

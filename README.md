@@ -19,20 +19,18 @@ const:
     PLUGIN: SwagBackendOrder
     SHOPWARE_ROOT: ../../../
 
-environments:
-    test:
-        templates:
-            - source: vendor/shopware/plugin-dev-tools/testing/templates/config_testing.php.tpl
-              destination: ../../../config_testing.php
-        paths:
-            - vendor/shopware/plugin-dev-tools/testing
-        const:
-            ENV: "testing"
-            DB_USER: "root"
-            DB_PASSWORD: "root"
-            DB_HOST: "localhost"
-            DB_DATABASE: "test_swag_backend_order"
-            DB_PORT: "3306"
+    templates:
+        - source: vendor/shopware/plugin-dev-tools/testing/templates/config_testing.php.tpl
+          destination: ../../../config_testing.php
+    paths:
+        - vendor/shopware/plugin-dev-tools/testing
+    const:
+        ENV: "testing"
+        DB_USER: "root"
+        DB_PASSWORD: "root"
+        DB_HOST: "localhost"
+        DB_DATABASE: "test_swag_backend_order"
+        DB_PORT: "3306"
 ```
 
 **SHOPWARE_ROOT** configuration:
