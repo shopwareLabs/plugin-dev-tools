@@ -2,7 +2,7 @@
 
 # Setup testing environment
 # Create database
-echo "create database __DB_DATABASE__" | mysql -u __DB_USER__ -p__DB_PASSWORD__
+echo "create database __DB_DATABASE__" | mysql -h __DB_HOST__ -u __DB_USER__ -p__DB_PASSWORD__
 
 # Move to shopware root and setup database
 SHOPWARE_ENV=__ENV__ ant -f ./__SHOPWARE_ROOT__build/build.xml build-unit
