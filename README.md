@@ -14,23 +14,50 @@ This tools provide fast ways to solve common plugin development issues.
 ## .psh.yml configuration tips
 
 **Example:**
+
 ```
 templates:
-    - source: vendor/shopware/plugin-dev-tools/testing/templates/config_testing.php.tpl
-      destination: ../../../config_testing.php
-paths:
-    - vendor/shopware/plugin-dev-tools/testing
+    - source: vendor/shopware/plugin-dev-tools/templates/config_testing.php.tpl
+      destination: ../../../../../../config_testing.php
+    - source: vendor/shopware/plugin-dev-tools/docker/templates/docker-compose.yml.tpl
+      destination: ./docker-compose.yml
+    - source: vendor/shopware/plugin-dev-tools/docker/templates/Dockerfile.tpl
+      destination: ./Dockerfile
+
+dynamic:
+    PLUGIN: pwd | awk -F '/' '{print $NF}'
+    PLUGIN_LOWERCASE: pwd | awk -F '/' '{print tolower($NF)}'
+    DB_DATABASE: echo "test_$(pwd | awk -F '/' '{print tolower($NF)}')"
+    APP_ID: echo "docker-compose ps -q $(pwd | awk -F '/' '{print tolower($NF)}')"
+
 const:
-    PLUGIN: SwagBackendOrder
-    SHOPWARE_ROOT: ../../../
+    PHP_VERSION: "7.0"
     ENV: "testing"
-    DB_USER: "root"
-    DB_PASSWORD: "root"
-    DB_HOST: "localhost"
-    DB_DATABASE: "test_swag_backend_order"
-    DB_PORT: "3306"
+    SHOPWARE_ROOT: ../../../../../../
+
+environments:
+    docker:
+        paths:
+         - vendor/shopware/plugin-dev-tools/docker
+        const:
+            DB_USER: "root"
+            DB_PASSWORD: "root"
+            DB_HOST: "mysql"
+            DB_PORT: "3306"
+    local:
+        paths:
+            - vendor/shopware/plugin-dev-tools/local
+        const:
+            DB_USER: "root"
+            DB_PASSWORD: "root"
+            DB_HOST: "localhost"
+            DB_PORT: "3306"
 ```
 
 **SHOPWARE_ROOT** configuration:
  - 5.2 Plugin-System: `../../../`
  - Old Plugin-System: `../../../../../../`
+ 
+## Warning
+
+Add the `psh` symlink to your `.sw-zip-blacklist` to prevent releasing a dead symlink which would break shopware updates.
