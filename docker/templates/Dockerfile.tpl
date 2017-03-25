@@ -18,6 +18,5 @@ RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib \
 RUN a2enmod rewrite
 
 COPY vendor/shopware/plugin-dev-tools/bin/wait-mysql.sh /tmp/wait-mysql.sh
-COPY vendor/shopware/plugin-dev-tools/bin/disable-search-index-regeneration.sh /tmp/disable-search-index-regeneration.sh
 
 WORKDIR __PLUGIN_WORKDIR__
