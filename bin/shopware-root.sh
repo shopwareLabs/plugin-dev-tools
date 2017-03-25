@@ -2,7 +2,6 @@
 
 CURRENT_DIR=$(pwd)
 SHOPWARE_ROOT=""
-COUNTER=0
 
 while [ ! -e "$CURRENT_DIR/shopware.php" ]; do
     SHOPWARE_ROOT="../$SHOPWARE_ROOT"

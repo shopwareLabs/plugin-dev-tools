@@ -9,11 +9,15 @@ RUN apt-get update \
      vim \
      ant \
      unzip \
-     git
+     git \
+     netcat
 
 RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/lib \
   && docker-php-ext-install pdo pdo_mysql mbstring gd zip
 
 RUN a2enmod rewrite
 
-WORKDIR /var/www/html/engine/Shopware/Plugins/Local/Frontend/SwagBundle
+COPY vendor/shopware/plugin-dev-tools/bin/wait-mysql.sh /tmp/wait-mysql.sh
+COPY vendor/shopware/plugin-dev-tools/bin/disable-search-index-regeneration.sh /tmp/disable-search-index-regeneration.sh
+
+WORKDIR __PLUGIN_WORKDIR__

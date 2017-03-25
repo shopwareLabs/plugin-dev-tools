@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-TTY: docker exec -ti swagbundle_php_1 /bin/bash
+TTY: docker exec -ti __APP_ID__ /bin/bash

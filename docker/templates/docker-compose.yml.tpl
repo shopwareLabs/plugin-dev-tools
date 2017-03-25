@@ -17,6 +17,6 @@ services:
     image: mysql
     environment:
       MYSQL_DATABASE: __DB_DATABASE__
-      MYSQL_ROOT_PASSWORD: __DB_PASSWORD__
+      MYSQL_ROOT_PASSWORD: __DB_ROOT_PASSWORD__
       MYSQL_USER: __DB_USER__
       MYSQL_PASSWORD: __DB_PASSWORD__
