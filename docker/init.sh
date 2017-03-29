@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-mv __SHOPWARE_ROOT__config_tmp.php __SHOPWARE_ROOT__config_"__ENV__".php
+docker-compose run __PLUGIN_LOWERCASE__ mv "__PLUGIN_WORKDIR__"/vendor/shopware/plugin-dev-tools/output/config_tmp.php __SHOPWARE_ROOT__config_"__ENV__".php
 
-docker-compose run __PLUGIN_LOWERCASE__ mysql -u__DB_USER__ -p__DB_PASSWORD__ -h__DB_HOST__ -e"create database __DB_DATABASE__"
+I: docker-compose run __PLUGIN_LOWERCASE__ mysql -u__DB_USER__ -p__DB_PASSWORD__ -h__DB_HOST__ -e"create database __DB_DATABASE__"
 
 docker-compose run __PLUGIN_LOWERCASE__ ant -f ./__SHOPWARE_ROOT__build/build.xml build-unit
 

@@ -1,6 +1,6 @@
 templates:
     - source: vendor/shopware/plugin-dev-tools/templates/config_testing.php.tpl
-      destination: ../../../../../../config_tmp.php
+      destination: vendor/shopware/plugin-dev-tools/output/config_tmp.php
     - source: vendor/shopware/plugin-dev-tools/docker/templates/docker-compose.yml.tpl
       destination: ./docker-compose.yml
     - source: vendor/shopware/plugin-dev-tools/docker/templates/Dockerfile.tpl
