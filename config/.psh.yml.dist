@@ -14,6 +14,7 @@ dynamic:
     APP_ID: "docker-compose ps -q $(pwd | awk -F '/' '{print tolower($NF)}')"
     SHOPWARE_ROOT: "./vendor/shopware/plugin-dev-tools/bin/shopware-root.sh"
     ENV: pwd | awk -F '/' '{print tolower($NF)"test"}'
+    USER_ID: id -u
 
 const:
     PHP_VERSION: "7.0"

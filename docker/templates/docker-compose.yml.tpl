@@ -2,6 +2,7 @@ version: '2'
 
 services:
   __PLUGIN_LOWERCASE__:
+    user: "__USER_ID__"
     build:
       context: .
       dockerfile: Dockerfile

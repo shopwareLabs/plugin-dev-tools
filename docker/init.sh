@@ -13,5 +13,3 @@ docker-compose run __PLUGIN_LOWERCASE__ php __SHOPWARE_ROOT__bin/console sw:plug
 docker-compose run __PLUGIN_LOWERCASE__ php __SHOPWARE_ROOT__bin/console sw:cache:clear --env="__ENV__"
 
 INCLUDE: vendor/shopware/plugin-dev-tools/docker/disable-search-index-regeneration.sh
-
-docker-compose run __PLUGIN_LOWERCASE__ chown 1000:1000 -R /var/www/html
