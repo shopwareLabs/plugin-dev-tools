@@ -6,31 +6,29 @@ This tools provide fast ways to solve common plugin development issues.
 
 ## Adding plugin-dev-tools to your plugin
 
-1. Add this repository to your composer file and run `composer install`
-2. Create a symlink `ln -s vendor/shopware/plugin-dev-tools/psh.phar psh`
-3. Create a `.psh.yml.dist` file and configure it
-4. Run `./psh`
+1. Add this repository to your composer file and run `$ composer install`
+2. Create a symlink `$ ln -s vendor/shopware/plugin-dev-tools/psh.phar psh`
+3. Go to `vendor/shopware/plugin-dev-tools` and run `$ ./install.sh`
+4. Go to your plugin-root and run `$ ./psh`
 
-## .psh.yml configuration tips
+## Warning
 
-**Example:**
+Add the `psh` symlink to your `.sw-zip-blacklist` to prevent releasing a dead symlink which would break shopware updates.
+
+## Commands
+
 ```
-templates:
-    - source: vendor/shopware/plugin-dev-tools/testing/templates/config_testing.php.tpl
-      destination: ../../../config_testing.php
-paths:
-    - vendor/shopware/plugin-dev-tools/testing
-const:
-    PLUGIN: SwagBackendOrder
-    SHOPWARE_ROOT: ../../../
-    ENV: "testing"
-    DB_USER: "root"
-    DB_PASSWORD: "root"
-    DB_HOST: "localhost"
-    DB_DATABASE: "test_swag_backend_order"
-    DB_PORT: "3306"
+    docker:cleanup - Cleansup the shopware installation
+    docker:destroy - Destorys all docker containers
+    docker:init - Similar to local:init, builds shopware
+    docker:ssh - Connect to your app docker container via ssh
+    docker:start - Start docker containers
+    docker:stop - Stops all docker containers
+    docker:unit - Runs unit tests
+    
+    local:init - Prepares your shopware installation
+    local:cleanup - Cleans up your shopware installation
+    local:reinstall - Reinstalls the current plugin
+    local:unit - Runs unit tests
+    local:unit-coverage - Generates coverage to ~/plugin-coverage/{plugin-name}
 ```
-
-**SHOPWARE_ROOT** configuration:
- - 5.2 Plugin-System: `../../../`
- - Old Plugin-System: `../../../../../../`
