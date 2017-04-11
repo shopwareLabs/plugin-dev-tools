@@ -9,7 +9,6 @@ templates:
 dynamic:
     PLUGIN: pwd | awk -F '/' '{print $NF}'
     PLUGIN_LOWERCASE: pwd | awk -F '/' '{print tolower($NF)}'
-    PLUGIN_WORKDIR: ./vendor/shopware/plugin-dev-tools/bin/plugin-workdir.sh
     DB_DATABASE: echo "test_$(pwd | awk -F '/' '{print tolower($NF)}')"
     APP_ID: "docker-compose ps -q $(pwd | awk -F '/' '{print tolower($NF)}')"
     SHOPWARE_ROOT: "./vendor/shopware/plugin-dev-tools/bin/shopware-root.sh"
@@ -21,6 +20,8 @@ const:
 
 environments:
     docker:
+        dynamic:
+            PLUGIN_WORKDIR: ./vendor/shopware/plugin-dev-tools/bin/plugin-workdir.sh
         paths:
          - vendor/shopware/plugin-dev-tools/docker
         const:
@@ -30,6 +31,8 @@ environments:
             DB_HOST: "mysql"
             DB_PORT: "3306"
     local:
+        dynamic:
+            PLUGIN_WORKDIR: pwd
         paths:
             - vendor/shopware/plugin-dev-tools/local
         const:
@@ -37,3 +40,4 @@ environments:
             DB_PASSWORD: "root"
             DB_HOST: "localhost"
             DB_PORT: "3306"
+            DB_ROOT_PASSWORD: "root"
