@@ -1,10 +1,6 @@
 templates:
     - source: vendor/shopware/plugin-dev-tools/templates/config_testing.php.tpl
       destination: vendor/shopware/plugin-dev-tools/output/config_tmp.php
-    - source: vendor/shopware/plugin-dev-tools/docker/templates/docker-compose.yml.tpl
-      destination: ./docker-compose.yml
-    - source: vendor/shopware/plugin-dev-tools/docker/templates/Dockerfile.tpl
-      destination: ./Dockerfile
 
 dynamic:
     PLUGIN: pwd | awk -F '/' '{print $NF}'
@@ -20,6 +16,11 @@ const:
 
 environments:
     docker:
+        templates:
+        - source: vendor/shopware/plugin-dev-tools/docker/templates/docker-compose.yml.tpl
+          destination: ./docker-compose.yml
+        - source: vendor/shopware/plugin-dev-tools/docker/templates/Dockerfile.tpl
+          destination: ./Dockerfile
         dynamic:
             PLUGIN_WORKDIR: ./vendor/shopware/plugin-dev-tools/bin/plugin-workdir.sh
         paths:
@@ -40,4 +41,3 @@ environments:
             DB_PASSWORD: "root"
             DB_HOST: "localhost"
             DB_PORT: "3306"
-            DB_ROOT_PASSWORD: "root"
