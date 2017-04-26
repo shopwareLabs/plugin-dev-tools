@@ -38,5 +38,15 @@ return [
         'dbname' => "__DB_DATABASE__",
         'host' => "__DB_HOST__",
         'port' => "__DB_PORT__"
-    ]
+    ],
+
+    'session' => [
+        'unitTestEnabled' => true,
+        'name' => 'SHOPWARESID',
+        'cookie_lifetime' => 0,
+        'use_trans_sid' => false,
+        'gc_probability' => 1,
+        'gc_divisor' => 100,
+        'save_handler' => 'db'
+    ],
 ];
