@@ -4,7 +4,7 @@ docker-compose run __PLUGIN_LOWERCASE__ mv "__PLUGIN_WORKDIR__"/vendor/shopware/
 
 I: docker-compose run __PLUGIN_LOWERCASE__ mysql -u__DB_USER__ -p__DB_PASSWORD__ -h__DB_HOST__ -e"create database __DB_DATABASE__"
 
-docker-compose run __PLUGIN_LOWERCASE__ ant -f ./__SHOPWARE_ROOT__build/build.xml build-unit
+docker-compose run __PLUGIN_LOWERCASE__ ant -f __SHOPWARE_ROOT__build/build.xml build-unit
 
 # Install plugin
 docker-compose run __PLUGIN_LOWERCASE__ php __SHOPWARE_ROOT__bin/console sw:plugin:refresh --env="__ENV__"
