@@ -32,3 +32,7 @@ Add the `psh` symlink to your `.sw-zip-blacklist` to prevent releasing a dead sy
     local:unit - Runs unit tests
     local:unit-coverage - Generates coverage to ~/plugin-coverage/{plugin-name}
 ```
+
+## Example
+
+You can find an example here: https://github.com/shopwareLabs/SwagBackendOrder
