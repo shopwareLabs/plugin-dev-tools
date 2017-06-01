@@ -33,6 +33,14 @@ Add the `psh` symlink to your `.sw-zip-blacklist` to prevent releasing a dead sy
     local:unit-coverage - Generates coverage to ~/plugin-coverage/{plugin-name}
 ```
 
+## Coverall support on travis
+
+[coveralls.io](https://coveralls.io/)
+
+1. Create a `build/logs/` directory in your plugin
+2. Execute your tests `./psh travis:unit-coveralls`
+3. Add to the travis `after_success` this line `./psh travis:send-coverall-report` to send the coverage report 
+
 ## Example
 
 You can find an example here: https://github.com/shopwareLabs/SwagBackendOrder
