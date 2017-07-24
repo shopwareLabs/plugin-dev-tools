@@ -9,6 +9,9 @@ SHOPWARE_ENV=__ENV__ ant -f __SHOPWARE_ROOT__build/build.xml build-unit
 
 # Install plugin
 php __SHOPWARE_ROOT__bin/console sw:plugin:refresh --env="__ENV__"
+
+I: ./vendor/shopware/plugin-dev-tools/bin/exec-before-install.sh __PLUGIN_WORKDIR__ __ENV__
+
 php __SHOPWARE_ROOT__bin/console sw:plugin:install --activate "__PLUGIN__" --env="__ENV__"
 
 php __SHOPWARE_ROOT__bin/console sw:cache:clear --env="__ENV__"
