@@ -33,6 +33,12 @@ Add the `psh` symlink to your `.sw-zip-blacklist` to prevent releasing a dead sy
     local:unit-coverage - Generates coverage to ~/plugin-coverage/{plugin-name}
 ```
 
+## Add custom plugin setups
+Add a script to add a custom installation routine which will be executed by the plugin-dev-tools.
+
+ - add a `before_install_plugin.sh` in your plugin root directory
+ - `chmod +x before_plugin_install.sh`
+
 ## Coverall support on travis
 
 [coveralls.io](https://coveralls.io/)
