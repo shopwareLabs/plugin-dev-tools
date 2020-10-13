@@ -6,7 +6,7 @@ mv __PLUGIN_WORKDIR__/vendor/shopware/plugin-dev-tools/output/config_tmp.php __S
 # Create database
 I: echo "create database __DB_DATABASE__" | mysql -h __DB_HOST__ -u __DB_USER__ -p__DB_PASSWORD__
 
-make .make.install CFG=.env."__ENV__" -C __SHOPWARE_ROOT__ ENV="__ENV__"
+make .make.install ENV_FILE=.env."__ENV__" -C __SHOPWARE_ROOT__ SHOPWARE_ENV="__ENV__"
 
 # Install plugin
 php __SHOPWARE_ROOT__bin/console sw:plugin:refresh --env="__ENV__"
