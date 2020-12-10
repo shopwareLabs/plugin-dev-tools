@@ -31,7 +31,7 @@ return [
         'frontend' => false,
         'backend' => false
     ],
-    
+
     'db' => [
         'username' => "__DB_USER__",
         'password' => "__DB_PASSWORD__",
@@ -48,5 +48,13 @@ return [
         'gc_probability' => 1,
         'gc_divisor' => 100,
         'save_handler' => 'db'
+    ],
+    'backendsession' => [
+        'unitTestEnabled' => true,
+        'name' => 'SHOPWAREBACKEND',
+        'cookie_lifetime' => 0,
+        'cookie_httponly' => 1,
+        'use_trans_sid' => 0,
+        'locking' => false,
     ],
 ];
