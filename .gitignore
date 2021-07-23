@@ -1,3 +1,5 @@
 .idea
 output/*
 !output/.gitkeep
+vendor/
+composer.lock
